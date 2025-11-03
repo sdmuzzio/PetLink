@@ -1,0 +1,54 @@
+.btnOfertas {
+  align-items: center;
+  background-color: var(--primary-green-dark);
+  border-radius: 0px 25px 25px 0px;
+  display: flex;
+  gap: 10px;
+  height: 70px;
+  justify-content: center;
+  left: 20px;
+  padding: 6px 38px;
+  position: relative;
+  top: 20px;
+  width: 240px;
+}
+
+.btnOfertas.hover {
+  background-color: var(--primary-green-light);
+  border: 5px solid;
+  border-color: var(--primary-green-dark);
+  top: 110px;
+}
+
+.btnOfertas.on-click {
+  background-color: var(--accent);
+  border: 5px solid;
+  border-color: var(--primary-green);
+  top: 200px;
+}
+
+.label {
+  align-items: center;
+  color: var(--accent);
+  display: flex;
+  font-family: "Preahvihear-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.hover .label {
+  color: var(--primary-green);
+  margin-top: -5.00px;
+}
+
+.on-click .label {
+  color: var(--textprimary);
+  margin-top: -5.00px;
+}

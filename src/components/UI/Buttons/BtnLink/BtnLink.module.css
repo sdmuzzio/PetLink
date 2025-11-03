@@ -1,0 +1,39 @@
+.btnLink {
+  display: flex;
+  height: 23px;
+  left: 20px;
+  position: relative;
+  width: 60px;
+}
+
+.predeterminado {
+  top: 20px;
+}
+
+.hover {
+  top: 63px;
+}
+
+.on-click {
+  top: 106px;
+}
+
+.label {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  width: 60px;
+  color: var(--textlink-blue-text);
+}
+
+.hover .label {
+  color: var(--textlink-blue-text-light);
+}
