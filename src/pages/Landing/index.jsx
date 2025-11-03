@@ -4,8 +4,15 @@ import { BtnSecondary } from "../../components/BtnSecondary";
 import image10 from "../../assets/images/image-10.png";
 import image11 from "../../assets/images/image-11.png";
 import * as classes from "./landing.module.css";
+import { useNavigate } from 'react-router-dom';
 
 export const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <div className={classes.landingPage}>
       <div className={classes.backgroundShape} />
@@ -39,8 +46,11 @@ export const LandingPage = () => {
         <BtnSecondary
           className={classes.btnSecondary}
           divClassName={classes.btnSecondaryText}
-          propiedad1="predeterminado"
           text="Iniciar Sesión"
+          onClick={() => {
+            console.log("CLICK DETECTADO"); 
+            navigate('/login');
+          }}
         />
         <div className={classes.logo}>PetLink</div>
       </div>

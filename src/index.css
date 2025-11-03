@@ -12,3 +12,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+:root {
+  --accent: #f5efe6;
+  --primary-green: #388e3c;
+  --primary-green-dark: #2e7d32;
+  --primary-green-tabs: #95c997;
+  --textprimary: #212121;
+  --textsecondary: #757575;
+  --bordersdivs: #e0e0e0;
+}
