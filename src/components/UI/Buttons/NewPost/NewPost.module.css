@@ -1,0 +1,46 @@
+.container {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: var(--primary-green);
+  border-radius: 35px;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  left: 20px;
+  position: relative;
+  top: 20px;
+  width: 70px;
+  transition: all 0.2s ease;
+}
+
+.container.hover {
+  background-color: var(--primary-green-light);
+  border: 5px solid var(--primary-green);
+  top: 110px;
+}
+
+.container.on-click {
+  background-color: var(--primary-green-light);
+  border: 5px solid var(--primary-green-dark);
+  top: 200px;
+}
+
+.icon {
+  color: #ffffff;
+  font-family: "Reddit Mono-Light", Helvetica;
+  font-size: 36px;
+  font-weight: 300;
+  height: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  width: 50px;
+}
+
+.icon-hover {
+  color: var(--primary-green);
+}
+
+.icon-on-click {
+  color: var(--textprimary);
+}

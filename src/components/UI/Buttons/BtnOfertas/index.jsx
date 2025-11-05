@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useReducer } from "react";
-import * as classes from "./style.module.css";
+import * as classes from "./BtnOfertas.module.css";
 
 export const BtnOfertas = ({ propiedad1, className }) => {
   const [state, dispatch] = useReducer(reducer, {

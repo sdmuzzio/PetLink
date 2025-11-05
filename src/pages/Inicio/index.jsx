@@ -1,76 +1,72 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BtnLink } from "./BtnLink";
-import { BtnOfertas } from "./BtnOfertas";
-import { BtnPropuestas } from "./BtnPropuestas";
-import { BtnBack } from "./BtnBack";
-import { CardMainpage } from "./CardMainpage";
-import { NewPost } from "./NewPost";
-import home from "./btnImg/home50.png";
-import image12 from "./btnImg/image-12.png";
-import backarrow from "./btnImg/backarrow.png";
-import imagen20251021164242516Photoroom1 from "./imagen-2025-10-21-164242516-photoroom-1.png";
-import "./style.css";
-import userImage from "./user-image.png";
+import { BtnLink } from "../../components/UI/Buttons/BtnLink";
+import { BtnOfertas } from "../../components/UI/Buttons/BtnOfertas";
+import { BtnPropuestas } from "../../components/UI/Buttons/BtnPropuestas";
+import { CardMainpage } from "../../components/CardMainpage";
+import { NewPost } from "../../components/UI/Buttons/NewPost";
+import home from "../../assets/images/btnImg/home.png";
+import image12 from "../../assets/images/image-12.png";
+import imagen20251021164242516Photoroom1 from "../../assets/images/imagen_2025-10-21_164242516-Photoroom 1.png";
+import styles from "./Inicio.module.css"; 
 
 export const Inicio = () => {
   return (
-    <div className="inicio">
-      <div className="bg-template">
-        <div className="nav-bar">
-          <img className="user-image" alt="User image" src={userImage} />
+    <div className={styles.container}>
+      <div className={styles.bgTemplate}>
+        <div className={styles.navBar}>
 
-          <div className="text-wrapper-2">Mis Chats</div>
+          <div className={styles.textWrapper2}>Mis Chats</div>
 
-          <div className="home">
+          <div className={styles.home}>
             <Link to="/inicio">
-              <img className="img" alt="Home" src={home} />
+              <img className={styles.img} alt="Home" src={home} />
             </Link>
           </div>
 
-          <BtnPropuestas className="BTN-propuestas-instance" />
-          <BtnOfertas className="BTN-ofertas-instance" />
+          <BtnPropuestas className={styles.btnPropuestasInstance} />
+          <BtnOfertas className={styles.btnOfertasInstance} />
         </div>
 
-        <NewPost className="new-post-instance" />
+        <NewPost className={styles.newPostInstance} />
       </div>
 
-      <div className="text-wrapper-3">Bienvenido a PetLink #username!</div>
+      <div className={styles.textWrapper3}>Bienvenido a PetLink #username!</div>
 
-      <div className="cant-contribuido">
-        <div className="rectangle" />
+      <div className={styles.cantContribuido}>
+        <div className={styles.rectangle} />
 
         <img
-          className="imagen"
+          className={styles.imagen}
           alt="Imagen"
           src={imagen20251021164242516Photoroom1}
         />
 
-        <p className="p">Esta semana has contribuido a: 4 personas</p>
+        <p className={styles.p}>Esta semana has contribuido a: 4 personas</p>
       </div>
 
-      <div className="top-donator">
-        <div className="rectangle" />
+      <div className={styles.topDonator}>
+        <div className={styles.rectangle} />
 
-        <div className="est-s-entre-los">
+        <div className={styles.estSEntreLos}>
           Estás entre los
           <br />
           200 donadores!
         </div>
 
-        <img className="image-2" alt="Image" src={image12} />
+        <img className={styles.image2} alt="Image" src={image12} />
       </div>
 
-      <div className="group">
-        <div className="text-wrapper-4">Tienes nuevas notificaciones.</div>
+      <div className={styles.group}>
+        <div className={styles.textWrapper4}>Tienes nuevas notificaciones.</div>
       </div>
 
-      <div className="group-2">
-        <div className="rectangle-2" />
+      <div className={styles.group2}>
+        <div className={styles.rectangle2} />
 
         <CardMainpage
-          className="card-mainpage-instance"
-          divClassName="design-component-instance-node"
+          className={styles.cardMainpageInstance}
+          divClassName={styles.designComponentInstanceNode}
           image="image.png"
           text="Transito urgente para dos cachorros"
           text1="Rescatamos a dos hermanitos de aprox. 45 días. Necesitan un hogar temporal seguro por un mes mientras gestionamos sus vacunas y adopción. Son pequeños, no ocupan mucho espacio."
@@ -78,22 +74,24 @@ export const Inicio = () => {
           text3="Publicado hace: 3m"
         />
         <CardMainpage
-          className="component"
-          divClassName="design-component-instance-node"
+          className={styles.component}
+          divClassName={styles.designComponentInstanceNode}
           image="image-14-2.png"
           text="Ofrezco transito para perro pequeño"
           text1="Tengo lugar en mi casa para un perrito en transito. Vivo sola, tengo patio pequeño cerrado y experiencia. No puedo con gatos."
           text2="Baradero"
           text3="Publicado hace: 4m"
         />
-        <div className="text-wrapper-5">Ultimas ofertas/propuestas:</div>
+        <div className={styles.textWrapper5}>Ultimas ofertas/propuestas:</div>
       </div>
 
       <BtnLink
-        className="BTN-link-instance"
-        divClassName="BTN-link-2"
+        className={styles.btnLinkInstance}
+        divClassName={styles.btnLink2}
         text="Hecha un vistazo."
+        onClick={() => navigate("/crear-inicio")}
       />
     </div>
   );
 };
+export default Inicio;

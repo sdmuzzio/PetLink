@@ -16,7 +16,7 @@ function Register() {
 
         <BtnPrimaryLogin
           text="Registrarse"
-          onClick={() => navigate('/feed')}
+          onClick={() => navigate('/inicio')}
         />
 
         <div className={styles.loginPrompt}>

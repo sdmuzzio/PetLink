@@ -1,9 +1,9 @@
 .btnLink {
   display: flex;
   height: 23px;
-  left: 20px;
   position: relative;
   width: 60px;
+  transition: top 0.2s ease;
 }
 
 .predeterminado {
@@ -32,6 +32,7 @@
   white-space: nowrap;
   width: 60px;
   color: var(--textlink-blue-text);
+  transition: color 0.2s ease;
 }
 
 .hover .label {

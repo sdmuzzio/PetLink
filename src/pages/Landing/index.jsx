@@ -35,6 +35,7 @@ export const LandingPage = () => {
           <BtnPrimary
           className={classes.btnPrimary}
           divClassName={classes.btnPrimaryText}
+          onClick={() => navigate('/register')}
           propiedad1="predeterminado"
           text="Explorar publicaciones"
         />
@@ -48,7 +49,6 @@ export const LandingPage = () => {
           divClassName={classes.btnSecondaryText}
           text="Iniciar Sesión"
           onClick={() => {
-            console.log("CLICK DETECTADO"); 
             navigate('/login');
           }}
         />

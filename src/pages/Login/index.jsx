@@ -22,7 +22,7 @@ function Login() {
 
         <BtnPrimaryLogin
           text="Iniciar Sesión"
-          onClick={() => navigate('/feed')}
+          onClick={() => navigate('/inicio')}
         />
 
         <div className={styles.links}>
