@@ -1,41 +1,37 @@
-/* === LANDING PAGE === */
+/* --- 1. CONTENEDOR PRINCIPAL --- */
 .landingPage {
+  background-color: var(--bordersbackground);
+  width: 100%;
   min-height: 100vh;
-  width: 100vw;
-  background: white;
-  position: relative;
-  overflow: hidden;
-  font-family: "Preahvihear-Regular", Helvetica;
+  display: flex;
+  flex-direction: column;
 }
-
-/* --- 2. HEADER (CON FLEXBOX) --- */
+/* --- 2. HEADER --- */
 .headerBackground {
   background-color: var(--primary-green);
   border-radius: 0px 0px 24px 24px;
   height: 70px;
+  width: 100%;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
   z-index: 10;
 }
 
-.headerBackground {
-  background-color: #388e3c;
-  border-radius: 0 0 30px 30px;
-  height: 100%;
-  width: 100%;
-}
-
 .logo {
-  position: absolute;
-  top: 18px;
-  left: 28px;
-  color: white;
+  color: #ffffff;
+  font-family: "Preahvihear", Helvetica;
   font-size: 32px;
   font-weight: 400;
 }
 
-/* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
+/* --- 3. CONTENIDO PRINCIPAL --- */
 .mainContent {
   width: 100%;
-  padding: 0 2.19% 40px;
+  padding: 0 0 40px 0;
   box-sizing: border-box;
   flex-grow: 1;
   display: grid;
@@ -50,7 +46,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  /* Alineado a la izquierda */
+  padding-left: 2.19%; /* Alineación con la imagen */
 }
 
 .mainHeading {
@@ -94,79 +90,86 @@
 }
 
 .btnSecondary {
-  position: absolute;
-  top: 11px;
-  right: 20px;
-  width: 140px;
-  height: 48px;
+  height: 50px;
+  width: 188;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 20px;
+  z-index: 5;
 }
 
 .btnSecondaryText {
-  color: black;
+  font-family: "Preahvihear", Helvetica;
   font-size: 18px;
-  text-align: center;
+  font-weight: 400;
+  color: var(--primary-green);
+  transition: color 0.2s ease-out;
 }
 
-/* === FONDO VERDE CURVO === */
+.btnSecondary:hover .btnSecondaryText {
+  color: white;
+}
+
+.btnSecondary:active .btnSecondaryText {
+  color: var(--textprimary);
+}
+
+/* --- COLUMNA 2: IMÁGENES --- */
+.imageContainer {
+  /* Contenedor para las imágenes */
+  position: relative;
+  width: 100%;
+  /* FLUIDEZ: La altura ahora depende del ancho (relación 1:1) */
+  /* Si 1:1 es muy alto, prueba 'aspect-ratio: 4 / 3;' */
+  aspect-ratio: 4/3;
+}
+
 .backgroundShape {
+  background-color: #74b476;
+  border-radius: 0px 0px 0px 73px;
+  height: 100%;
+  /* Ocupa el 100% del .imageContainer */
+  width: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
-  height: 90vh; /* ← REDUCIDO DE 100% A 75vh */
-  background-color: #74b476;
-  border-radius: 0 0 0 120px;
   z-index: 0;
 }
 
-.image10 {
+.landingDog {
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: none !important; /* ← ELIMINAR SOMBRA */
-  z-index: 1;
-}
-.image10 {
   position: absolute;
-  top: 52%;
-  right: -0%;                    /* ← MÁS A LA IZQUIERDA */
-  transform: translateY(-50%);
-  width: 50%;                   /* ↑ DE 35% A 42% */
-  max-width: 630px;             /* ↑ DE 450px A 550px */
-  height: auto;
-  border-radius: 20px;
   z-index: 1;
+
+  /* FLUIDEZ: Tamaño y posición en porcentaje */
+  width: 70%;
+  /* El perro será el 70% del contenedor */
+  height: auto;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  /* Centrado */
 }
 
-.image11 {
+.landingCat {
   object-fit: cover;
   position: absolute;
-  top: 62%;
-  right: 15%;                   /* ← MÁS CERCA DEL PERRO */
-  transform: translateY(-50%);
-  width: 45%;                   /* ↑ DE 28% A 34% */
-  max-width: 540px;             /* ↑ DE 380px A 480px */
-  height: auto;
-  border-radius: 20px;
   z-index: 2;
 
   /* FLUIDEZ: Tamaño y posición en porcentaje */
-  width: 45%;
+  width: 50%;
   /* El gato será el 45% del contenedor */
   height: auto;
-  top: 75%;
-  left: 25%;
+  top: 69%;
+  /*nice*/
+  left: 40%;
   transform: translate(-50%, -50%);
   /* Centrado */
 }
 
 
-/* --- 4. MEDIA QUERIES (TODO JUNTO AL FINAL) --- */
+/* --- 4. MEDIA QUERIES  --- */
 
 /* Para tablets y móviles (ej. menos de 800px) */
 @media (max-width: 800px) {
@@ -198,18 +201,23 @@
 
   .imageContainer {
     order: 2;
-    /* Las imágenes van después */
-    height: 400px;
   }
 
-  .image10 {
-    height: 350px;
-    left: 50%;
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
   }
 
-  .image11 {
-    height: 240px;
-    left: 15%;
+  .landingDog {
+    left: 55%;
+  }
+
+  .landingCat {
+    left: 35%;
   }
 
   .logo {
@@ -224,26 +232,36 @@
     padding: 0 15px;
   }
 
-  .image11 {
-    display: none;
-    /* Ocultamos el gato */
-  }
-
-  .image10 {
-    height: 300px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Lo centramos */
-  }
-
-  .imageContainer {
-    height: 320px;
-  }
-
   .btnPrimary {
     width: 100%;
     /* Que ocupe todo el ancho */
     max-width: 300px;
     /* Con un límite */
+  }
+
+  .imageContainer {
+    aspect-ratio: 3/4;
+    /* Cuadrado */
+  }
+
+  .landingCat {
+    display: none;
+    /* Ocultamos el gato */
+  }
+
+  .landingDog { 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
   }
 }
