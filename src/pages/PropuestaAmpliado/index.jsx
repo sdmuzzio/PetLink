@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { BtnOfertas } from "../../components/UI/Buttons/BtnOfertas";
 import { BtnPropuestas } from "../../components/UI/Buttons/BtnPropuestas";
-import { BtnPrimary } from "../../components/BtnPrimary";
+import { BtnPrimary } from "../../components/UI/Buttons/BtnPrimary";
 import { PostContainer } from "../../components/PostContainer";
 import * as classes from "./PropuestaAmpliado.module.css";
 
