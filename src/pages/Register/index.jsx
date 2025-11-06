@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import BtnPrimaryLogin from '../../components/BtnPrimaryLogin';
+import { BtnPrimary } from "../../components/UI/Buttons/BtnPrimary";
 import styles from './Register.module.css';
 
 function Register() {
@@ -14,15 +14,16 @@ function Register() {
         <input type="email" placeholder="Email" className={styles.input} />
         <input type="password" placeholder="Password" className={styles.input} />
 
-        <BtnPrimaryLogin
+        <BtnPrimary
           text="Registrarse"
+          className={styles.registerButton}
           onClick={() => navigate('/inicio')}
         />
 
         <div className={styles.loginPrompt}>
-          <span className={styles.loginText}>¿Ya tienes una cuenta?</span>
+          <span className={styles.linkText}>¿Ya tienes una cuenta?</span>
           <span
-            className={styles.loginLink}
+            className={styles.link}
             onClick={() => navigate('/login')}
           >
             Iniciar Sesión

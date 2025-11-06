@@ -10,7 +10,7 @@
 /* --- 2. HEADER (CON FLEXBOX) --- */
 .headerBackground {
   background-color: var(--primary-green);
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 24px 24px;
   height: 70px;
   width: 100%;
   padding: 0 28px;
@@ -53,17 +53,18 @@
 .mainHeading {
   color: var(--textprimary);
   font-family: "Preahvihear", Helvetica;
-  font-size: 32px;
-  font-weight: 400;
+  font-size: clamp(32px, 3vw, 48px);
+  /* Fluido */
   text-align: center;
 }
 
 .subHeading {
   color: var(--textsecondary);
   font-family: "Lato", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: clamp(20px, 1.5vw, 28px);
+  /* Fluido */
   text-align: center;
+  font-weight: 600;
 }
 
 .btnPrimary {
@@ -110,52 +111,62 @@
 .btnSecondary:hover .btnSecondaryText {
   color: white;
 }
+
 .btnSecondary:active .btnSecondaryText {
   color: var(--textprimary);
 }
 
 /* --- COLUMNA 2: IMÁGENES --- */
 .imageContainer {
+  /* Contenedor para las imágenes */
   position: relative;
   width: 100%;
-  height: 530px;
+  /* FLUIDEZ: La altura ahora depende del ancho (relación 1:1) */
+  /* Si 1:1 es muy alto, prueba 'aspect-ratio: 4 / 3;' */
+  aspect-ratio: 4/3;
 }
 
 .backgroundShape {
   background-color: #74b476;
   border-radius: 0px 0px 0px 73px;
   height: 100%;
+  /* Ocupa el 100% del .imageContainer */
   width: 100%;
-  position: relative;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
 }
 
 .image10 {
-  height: 470px;
-  width: auto;
   object-fit: cover;
   position: absolute;
-  top: 50%;
-  left: 25%;
-  /* Este valor está bien si te gusta cómo se ve */
-  transform: translateY(-50%);
   z-index: 1;
+
+  /* FLUIDEZ: Tamaño y posición en porcentaje */
+  width: 70%;
+  /* El perro será el 70% del contenedor */
+  height: auto;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  /* Centrado */
 }
 
 .image11 {
-  height: 320px;
-  width: auto;
   object-fit: cover;
   position: absolute;
-  top: 70%;
-  left: 7%;
-  /* Este valor está bien si te gusta cómo se ve */
-  transform: translateY(-50%);
   z-index: 2;
-}
 
+  /* FLUIDEZ: Tamaño y posición en porcentaje */
+  width: 45%;
+  /* El gato será el 45% del contenedor */
+  height: auto;
+  top: 75%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  /* Centrado */
+}
 
 
 /* --- 4. MEDIA QUERIES (TODO JUNTO AL FINAL) --- */

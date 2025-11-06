@@ -59,7 +59,7 @@
   z-index: 1;
 }
 
-.links {
+.links { /* Contenedor para los enlaces */
   margin-top: 30px;
   font-size: 18px;
   color: white;
