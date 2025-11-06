@@ -9,7 +9,7 @@
 
 /* --- 2. HEADER (CON FLEXBOX) --- */
 .headerBackground {
-  background-color: #388e3c;
+  background-color: var(--primary-green);
   border-radius: 0px 0px 30px 30px;
   height: 70px;
   width: 100%;
@@ -18,11 +18,13 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
   color: #ffffff;
-  font-family: "Preahvihear-Regular", Helvetica;
+  font-family: "Preahvihear", Helvetica;
   font-size: 32px;
   font-weight: 400;
 }
@@ -30,15 +32,12 @@
 /* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
 .mainContent {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 40px 2.19%;
-  /* Ajusté tu padding para que sea uniforme */
+  padding: 0 2.19% 40px;
   box-sizing: border-box;
   flex-grow: 1;
   display: grid;
   grid-template-columns: 48% 1fr;
-  align-items: center;
+  align-items: start;
   gap: 20px;
 }
 
@@ -47,24 +46,24 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: flex-start;
+  align-items: center;
   /* Alineado a la izquierda */
 }
 
 .mainHeading {
   color: var(--textprimary);
-  font-family: "Preahvihear-Regular", Helvetica;
+  font-family: "Preahvihear", Helvetica;
   font-size: 32px;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
 }
 
 .subHeading {
   color: var(--textsecondary);
-  font-family: "Lato-SemiBold", Helvetica;
+  font-family: "Lato", Helvetica;
   font-size: 20px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
 }
 
 .btnPrimary {
@@ -75,14 +74,15 @@
 
 .btnPrimaryText {
   color: #ffffff;
-  font-family: "Preahvihear-Regular", Helvetica;
-  font-size: 24px;
+  font-family: "Preahvihear", Helvetica;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
   text-align: center;
   width: fit-content;
   /* margin-top: -1.00px; (probablemente no lo necesites) */
+  white-space: nowrap;
 }
 
 .btnPrimary:active .btnPrimaryText {
@@ -90,8 +90,8 @@
 }
 
 .btnSecondary {
-  height: 48px;
-  width: 140px;
+  height: 50px;
+  width: 188;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@
 }
 
 .btnSecondaryText {
-  font-family: "Preahvihear-Regular", Helvetica;
+  font-family: "Preahvihear", Helvetica;
   font-size: 18px;
   font-weight: 400;
   color: var(--primary-green);
@@ -126,7 +126,7 @@
   border-radius: 0px 0px 0px 73px;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   z-index: 0;
