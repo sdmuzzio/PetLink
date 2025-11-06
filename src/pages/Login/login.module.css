@@ -1,0 +1,99 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bordersbackground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.panel {
+  background-color: var(--primary-green-tabs);
+  border-radius: 50px;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para posicionar el gato respecto a este contenedor */
+}
+
+.title {
+  color: var(--textprimary);
+  font-family: "Preahvihear", Helvetica;
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 40px 0;
+}
+
+.imageWrapper {
+  /* Posicionar el gato respecto a .panel */
+  position: absolute;
+  left: 25px; /* alinea con el padding interno del panel */
+  top: 90px; /* ajusta para colocarlo encima del input (modificar si es necesario) */
+  z-index: 20;
+  pointer-events: none;
+  display: block;
+}
+
+.catImage {
+  width: 120px; /* tamaño visible similar al diseño */
+  height: auto;
+  object-fit: contain;
+}
+
+.input {
+  background-color: var(--bordersbackground);
+  border: 2px solid var(--bordersdivs);
+  border-radius: 20px;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: var(--textsecondary);
+  width: 100%;
+  margin: 12px 0;
+  display: block;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
+
+.loginButton { /* Estilos para el botón de registro */
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 18px; 
+}
+
+.links { /* Contenedor para los enlaces */
+  margin-top: 30px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+.linkLine {
+  margin: 8px 0;
+  display: block;
+}
+
+.linkText {
+  color: white;
+  font-size: 18px;
+}
+
+.link {
+  color: var(--textlink-blue-text);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.link:hover {
+  color: var(--textlink-blue-text-light);
+}

@@ -1,0 +1,59 @@
+.button {
+  align-items: center;
+  border-radius: 25px 0px 0px 25px;
+  display: flex;
+  gap: 10px;
+  height: 70px;
+  justify-content: center;
+  left: 20px;
+  padding: 5px 15px;
+  position: relative;
+  width: 240px;
+}
+
+.button.predeterminado {
+  background-color: var(--primary-green-dark);
+  top: 20px;
+}
+
+.button.hover {
+  background-color: var(--primary-green-light);
+  border: 5px solid;
+  border-color: var(--primary-green-dark);
+  top: 110px;
+}
+
+.button.on-click {
+  background-color: var(--accent);
+  border: 5px solid;
+  border-color: var(--primary-green);
+  top: 200px;
+}
+
+.label {
+  align-items: center;
+  display: flex;
+  font-family: "Preahvihear-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.label.label-predeterminado {
+  color: var(--accent);
+}
+
+.label.label-hover {
+  color: var(--primary-green);
+  margin-top: -4.00px;
+}
+
+.label.label-on-click {
+  color: var(--textprimary);
+  margin-top: -4.00px;
+}

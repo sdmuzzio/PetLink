@@ -1,0 +1,15 @@
+:root {
+  --accent: rgba(245, 239, 230, 1);
+  --bordersbackground: rgba(250, 250, 250, 1);
+  --bordersdivs: rgba(224, 224, 224, 1);
+  --error: rgba(211, 47, 47, 1);
+  --exito: rgba(76, 175, 80, 1);
+  --primary-green: rgba(56, 142, 60, 1);
+  --primary-green-dark: rgba(46, 125, 50, 1);
+  --primary-green-light: rgba(200, 230, 201, 1);
+  --primary-green-tabs: rgba(149, 201, 151, 1);
+  --textlink-blue-text: rgba(0, 103, 184, 1);
+  --textlink-blue-text-light: rgba(77, 165, 209, 1);
+  --textprimary: rgba(33, 33, 33, 1);
+  --textsecondary: rgba(117, 117, 117, 1);
+}

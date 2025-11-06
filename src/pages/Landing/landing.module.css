@@ -1,0 +1,267 @@
+/* --- 1. CONTENEDOR PRINCIPAL --- */
+.landingPage {
+  background-color: var(--bordersbackground);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* --- 2. HEADER --- */
+.headerBackground {
+  background-color: var(--primary-green);
+  border-radius: 0px 0px 24px 24px;
+  height: 70px;
+  width: 100%;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  color: #ffffff;
+  font-family: "Preahvihear", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/* --- 3. CONTENIDO PRINCIPAL --- */
+.mainContent {
+  width: 100%;
+  padding: 0 0 40px 0;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 48% 1fr;
+  align-items: start;
+  gap: 20px;
+}
+
+/* --- COLUMNA 1: TEXTO --- */
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding-left: 2.19%; /* Alineación con la imagen */
+}
+
+.mainHeading {
+  color: var(--textprimary);
+  font-family: "Preahvihear", Helvetica;
+  font-size: clamp(32px, 3vw, 48px);
+  /* Fluido */
+  text-align: center;
+}
+
+.subHeading {
+  color: var(--textsecondary);
+  font-family: "Lato", Helvetica;
+  font-size: clamp(20px, 1.5vw, 28px);
+  /* Fluido */
+  text-align: center;
+  font-weight: 600;
+}
+
+.btnPrimary {
+  /* Ancho base para desktop */
+  height: 60px;
+  width: 320px;
+}
+
+.btnPrimaryText {
+  color: #ffffff;
+  font-family: "Preahvihear", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  width: fit-content;
+  /* margin-top: -1.00px; (probablemente no lo necesites) */
+  white-space: nowrap;
+}
+
+.btnPrimary:active .btnPrimaryText {
+  color: #212121;
+}
+
+.btnSecondary {
+  height: 50px;
+  width: 188;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 5;
+}
+
+.btnSecondaryText {
+  font-family: "Preahvihear", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-green);
+  transition: color 0.2s ease-out;
+}
+
+.btnSecondary:hover .btnSecondaryText {
+  color: white;
+}
+
+.btnSecondary:active .btnSecondaryText {
+  color: var(--textprimary);
+}
+
+/* --- COLUMNA 2: IMÁGENES --- */
+.imageContainer {
+  /* Contenedor para las imágenes */
+  position: relative;
+  width: 100%;
+  /* FLUIDEZ: La altura ahora depende del ancho (relación 1:1) */
+  /* Si 1:1 es muy alto, prueba 'aspect-ratio: 4 / 3;' */
+  aspect-ratio: 4/3;
+}
+
+.backgroundShape {
+  background-color: #74b476;
+  border-radius: 0px 0px 0px 73px;
+  height: 100%;
+  /* Ocupa el 100% del .imageContainer */
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.landingDog {
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+
+  /* FLUIDEZ: Tamaño y posición en porcentaje */
+  width: 70%;
+  /* El perro será el 70% del contenedor */
+  height: auto;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  /* Centrado */
+}
+
+.landingCat {
+  object-fit: cover;
+  position: absolute;
+  z-index: 2;
+
+  /* FLUIDEZ: Tamaño y posición en porcentaje */
+  width: 50%;
+  /* El gato será el 45% del contenedor */
+  height: auto;
+  top: 69%;
+  /*nice*/
+  left: 40%;
+  transform: translate(-50%, -50%);
+  /* Centrado */
+}
+
+
+/* --- 4. MEDIA QUERIES  --- */
+
+/* Para tablets y móviles (ej. menos de 800px) */
+@media (max-width: 800px) {
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    /* Una sola columna */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contentContainer {
+    align-items: center;
+    /* Centra el contenido */
+    order: 1;
+    /* El texto va primero */
+  }
+
+  .mainHeading,
+  .subHeading {
+    text-align: center;
+    /* Centra los textos */
+  }
+
+  .btnPrimary {
+    width: 250px;
+    /* Ancho para tablet */
+  }
+
+  .imageContainer {
+    order: 2;
+  }
+
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
+  }
+
+  .landingDog {
+    left: 55%;
+  }
+
+  .landingCat {
+    left: 35%;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+}
+
+/* Para móviles muy pequeños */
+@media (max-width: 480px) {
+
+  .headerBackground {
+    padding: 0 15px;
+  }
+
+  .btnPrimary {
+    width: 100%;
+    /* Que ocupe todo el ancho */
+    max-width: 300px;
+    /* Con un límite */
+  }
+
+  .imageContainer {
+    aspect-ratio: 3/4;
+    /* Cuadrado */
+  }
+
+  .landingCat {
+    display: none;
+    /* Ocultamos el gato */
+  }
+
+  .landingDog { 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
+  }
+}

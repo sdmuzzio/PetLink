@@ -1,0 +1,22 @@
+.home {
+  background-size: 100% 100%;
+  height: 100px;
+  left: 20px;
+  position: relative;
+  width: 100px;
+}
+
+.predeterminado {
+  background-image: url(home50.png);
+  top: 20px;
+}
+
+.hover {
+  background-image: url(home.png);
+  top: 140px;
+}
+
+.on-click {
+  background-image: url(home50.png);
+  top: 260px;
+}

@@ -1,0 +1,252 @@
+.container {
+  height: 768px;
+  position: relative;
+  width: 1280px;
+}
+
+.bgTemplate {
+  background-color: var(--bordersbackground);
+  display: flex;
+  flex-direction: column;
+  gap: 555px;
+  height: 768px;
+  left: 0;
+  position: absolute;
+  top: calc(50% - 384px);
+  width: 1280px;
+}
+
+.navBar {
+  background-color: var(--primary-green);
+  box-shadow: 0px 4px 4px #00000040;
+  height: 70px;
+  position: relative;
+}
+
+.userImage {
+  aspect-ratio: 1.13;
+  height: 58px;
+  left: 91.25%;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 5.08%;
+}
+
+.textWrapper2 {
+  align-items: center;
+  color: var(--accent);
+  display: flex;
+  font-family: "Reddit Mono-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  height: 42px;
+  justify-content: center;
+  left: 941px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+}
+
+.home {
+  display: flex;
+  height: 58px;
+  left: 19px;
+  position: absolute;
+  top: 6px;
+  width: 58px;
+}
+
+.img {
+  display: block;
+  flex: 1;
+  width: 58px;
+}
+
+.btnPropuestasInstance {
+  left: 382px !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.btnOfertasInstance {
+  left: 622px !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.newPostInstance {
+  left: unset !important;
+  margin-left: 1175px !important;
+  position: unset !important;
+  top: unset !important;
+}
+
+.textWrapper3 {
+  color: #000000;
+  font-family: "Reddit Mono-Light", Helvetica;
+  font-size: 32px;
+  font-weight: 300;
+  left: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 75px;
+}
+
+.cantContribuido {
+  height: 20.56%;
+  left: 64.38%;
+  position: absolute;
+  top: 26.32%;
+  width: 34.77%;
+}
+
+.rectangle {
+  background-color: var(--primary-green-light);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 99.55%;
+}
+
+.imagen {
+  aspect-ratio: 1;
+  height: 134px;
+  left: 301px;
+  position: absolute;
+  top: calc(50% - 62px);
+  width: 134px;
+}
+
+.p {
+  color: var(--textprimary);
+  font-family: "Reddit Mono-Light", Helvetica;
+  font-size: 24px;
+  font-weight: 300;
+  left: 38px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: calc(50% - 42px);
+  width: 231px;
+}
+
+.topDonator {
+  height: 20.56%;
+  left: 64.38%;
+  position: absolute;
+  top: 52.29%;
+  width: 34.77%;
+}
+
+.estSEntreLos {
+  color: var(--textprimary);
+  font-family: "Reddit Mono-Light", Helvetica;
+  font-size: 24px;
+  font-weight: 300;
+  left: 38px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: calc(50% - 39px);
+  width: 231px;
+}
+
+.image2 {
+  aspect-ratio: 1;
+  height: 134px;
+  left: 301px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(50% - 75px);
+  width: 134px;
+}
+
+.group {
+  display: flex;
+  height: 28px;
+  left: 30px;
+  position: absolute;
+  top: 650px;
+  width: 312px;
+}
+
+.textWrapper4 {
+  color: #000000;
+  font-family: "Roboto-Light", Helvetica;
+  font-size: 24px;
+  font-weight: 300;
+  height: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  width: 310px;
+}
+
+.group2 {
+  height: 489px;
+  left: 30px;
+  position: absolute;
+  top: 148px;
+  width: 767px;
+}
+
+.rectangle2 {
+  background-color: var(--primary-green-light);
+  border: 1px solid;
+  border-color: #000000;
+  height: 489px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 765px;
+}
+
+.cardMainpageInstance {
+  left: 33px !important;
+  position: absolute !important;
+  top: 53px !important;
+}
+
+.designComponentInstanceNode {
+  width: 67.57% !important;
+}
+
+.component {
+  left: 33px !important;
+  position: absolute !important;
+  top: 271px !important;
+}
+
+.textWrapper5 {
+  color: #000000;
+  font-family: "Reddit Mono-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  left: calc(50% - 184px);
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 9px;
+}
+
+.btnLinkInstance {
+  display: unset !important;
+  height: 28px !important;
+  left: 340px !important;
+  position: absolute !important;
+  top: 650px !important;
+  width: 161px !important;
+}
+
+.btnLink2 {
+  flex: unset !important;
+  height: 82.14% !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 10.71% !important;
+  width: 98.76% !important;
+}

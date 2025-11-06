@@ -1,0 +1,22 @@
+.backArrow {
+  background-size: 100% 100%;
+  height: 50px;
+  left: 20px;
+  position: relative;
+  width: 50px;
+}
+
+.predeterminado {
+  background-image: url(backarrow50.png);
+  top: 20px;
+}
+
+.hover {
+  background-image: url(backarrow.png);
+  top: 90px;
+}
+
+.on-click {
+  background-image: url(backarrow50.png);
+  top: 160px;
+}
