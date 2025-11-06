@@ -8,3 +8,5 @@ export function BtnPrimary({ className, divClassName, text, onClick }) {
     </button>
   );
 }
+
+

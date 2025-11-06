@@ -1,118 +1,110 @@
+/* --- 1. CONTENEDOR PRINCIPAL --- */
 .landingPage {
   background-color: var(--bordersbackground);
-  height: 768px;
-  position: relative;
-  width: 1280;
-}
-
-.backgroundShape {
-  background-color: #74b476;
-  border-radius: 0px 0px 0px 73px;
-  height: 530px;
-  left: 56%; 
-  position: absolute;
-  top: calc(50.00% - 330px);
-  width: 44%; 
-  z-index: 0;
-}
-
-.image10 {
-  height: 470px; 
-  left: 66%; 
-  object-fit: cover;
-  position: absolute;
-  top: calc(50.00% - 250px);
-  width: 34%;
-  z-index: 1; 
-}
-
-.image11 {
-  height: 320px; 
-  left: 57%; 
-  object-fit: cover;
-  position: absolute;
-  top: calc(50.00% - 100px);
-  width: 28%;
-  z-index: 2; 
-}
-
-.contentContainer {
-  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  left: 2.19%;
-  position: absolute;
-  top: 152px;
-  width: 48.13%;
-  z-index: 3; 
+  flex-direction: column; /* Apila el header y el main content */
 }
 
-.mainHeading {
-  align-items: center;
-  align-self: stretch;
-  color: var(--textprimary);
-  display: flex;
-  font-family: "Preahvihear-Regular", Helvetica;
-  font-size: 32px;
-  font-weight: 400;
-  justify-content: center;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -1.00px;
-  position: relative;
-  text-align: center;
-}
-
-.subHeading {
-  align-items: center;
-  align-self: stretch;
-  color: var(--textsecondary);
-  display: flex;
-  font-family: "Lato-SemiBold", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
-  justify-content: center;
-  letter-spacing: 0;
-  line-height: normal;
-  position: relative;
-  text-align: center;
-}
-
-.header {
-  height: 70px;
-  left: 0;
-  position: relative;
-  top: 0;
-  width: calc(100% + 2px);
-}
-
+/* --- 2. HEADER (CON FLEXBOX) --- */
 .headerBackground {
   background-color: #388e3c;
   border-radius: 0px 0px 30px 30px;
   height: 70px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: calc(100% - 2px);
+  width: 100%;
+  padding: 0 28px; /* Espaciado interno */
+  
+  /* ¡Magia de Flexbox! */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Empuja el logo a la izquierda y el botón a la derecha */
+  
+  box-sizing: border-box; /* Para que el padding no afecte el ancho */
 }
 
+/* Logo y Botón: Ya no necesitan position: absolute */
 .logo {
-  align-items: center;
   color: #ffffff;
-  display: flex;
   font-family: "Preahvihear-Regular", Helvetica;
   font-size: 32px;
   font-weight: 400;
-  height: 58px;
+  /* ...otros estilos de texto que tenías... */
+}
+
+.btnSecondary {
+  height: 48px;
+  width: 140px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  left: 28px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 6px;
-  width: 124px;
+}
+
+.btnSecondaryText {
+  /* ...tus estilos para btnSecondaryText... */
+  font-size: 18px;
+}
+
+@media (max-width: 800px) {
+
+  /* ... tus otras reglas de .mainContent, .contentContainer ... */
+
+  .btnPrimary {
+    /* Hacemos el botón un poco más grande
+       para que sea más fácil de tocar en móvil */
+    width: 250px; 
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* ... tus otras reglas ... */
+
+  .btnPrimary {
+    width: 100%; /* Que ocupe todo el ancho de su columna */
+    max-width: 300px; /* Pero con un límite para que no sea gigante */
+  }
+}
+
+/* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
+.mainContent {
+  width: 100%;
+  max-width: 1280px; /* Mantiene un ancho máximo en pantallas grandes */
+  margin: 0 auto; /* Centra el contenido */
+  padding: 0px 0% 40px 2.19%; /* Espaciado lateral */
+  box-sizing: border-box;
+  /*flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
+
+  /* ¡Magia de Grid! */
+  display: grid;
+  grid-template-columns: 48% 1fr; /* Columna 1 (texto) 48%, Columna 2 (img) el resto */
+  align-items: center;
+  gap: 20px; /* Espacio entre las columnas */
+}
+
+/* --- COLUMNA 1: TEXTO --- */
+.contentContainer {
+  /* Ya no necesita position: absolute, left, top, etc. */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start; /* Alinea el texto y botón a la izquierda */
+}
+
+.mainHeading {
+  color: var(--textprimary);
+  font-family: "Preahvihear-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left; /* O 'center' si prefieres */
+}
+
+.subHeading {
+  color: var(--textsecondary);
+  font-family: "Lato-SemiBold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left; /* O 'center' */
 }
 
 .btnPrimary {
@@ -120,27 +112,108 @@
   width: 200px;
 }
 
-.btnPrimaryText {
-  margin-bottom: -0.5px;
-  margin-top: -2.5px;
+/* --- COLUMNA 2: IMÁGENES --- */
+.imageContainer {
+  /* IMPORTANTE: Este es el nuevo contexto para las imágenes */
+  position: relative;
+  width: 100%;
+  height: 530px; /* Alto de la forma verde */
 }
 
-.btnSecondary {
-  display: flex;
-  height: 48px; 
-  position: absolute;
-  right: 20px;
-  top: 11px; 
-  width: 140px; 
-  align-items: center;
-  justify-content: center;
-}
-.btnSecondaryText {
-  margin: 0; 
-  display: block;
-  text-align: center;
+/* Las imágenes y la forma ahora son absolutas RELATIVO a .imageContainer */
+.backgroundShape {
+  background-color: #74b476;
+  border-radius: 0px 0px 0px 73px;
+  height: 100%; /* 530px */
   width: 100%;
-  padding: 0;
-  line-height: 1;
-  font-size: 18px;
+  position: absolute;
+  top: 0;
+  right: 0; /* Lo anclamos a la derecha */
+  z-index: 0;
+}
+
+.image10 {
+  height: 470px;
+  width: auto; /* Dejamos que el alto defina el ancho */
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 25%; /* Ajusta esto para tu gusto */
+  transform: translateY(-50%); /* Centrado vertical */
+  z-index: 1;
+}
+
+.image11 {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 70%;
+  left: 7%; /* Ajusta esto para tu gusto */
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+
+/* --- 4. MEDIA QUERIES (LA MAGIA RESPONSIVE) --- */
+
+/* Para tablets y móviles (ej. menos de 800px) */
+@media (max-width: 800px) {
+  
+  /* 1. Apila las columnas del grid */
+  .mainContent {
+    grid-template-columns: 1fr; /* Una sola columna */
+    text-align: center;
+    gap: 40px; /* Espacio vertical entre texto e imágenes */
+  }
+
+  /* 2. Centra el texto */
+  .contentContainer {
+    align-items: center; /* Centra el contenido de la columna de texto */
+    order: 1; /* El texto va primero */
+  }
+  .mainHeading, .subHeading {
+    text-align: center;
+  }
+
+  /* 3. Ajusta las imágenes */
+  .imageContainer {
+    order: 2; /* Las imágenes van después */
+    height: 400px; /* Un poco más bajo para móvil */
+  }
+
+  .image10 {
+    height: 350px;
+    left: 50%;
+  }
+  .image11 {
+    height: 240px;
+    left: 15%;
+  }
+
+  /* 4. Ajusta el Header */
+  .logo {
+    font-size: 28px; /* Logo más pequeño */
+  }
+}
+
+/* Para móviles muy pequeños */
+@media (max-width: 480px) {
+  .headerBackground {
+    padding: 0 15px; /* Menos padding */
+  }
+  
+  .image11 {
+    display: none; /* Ocultamos el gato si no hay espacio */
+  }
+
+  .image10 {
+    height: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Lo centramos completamente */
+  }
+  
+  .imageContainer {
+    height: 320px;
+  }
 }
