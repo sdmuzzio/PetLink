@@ -7,7 +7,7 @@ import { CardMainpage } from "../../components/CardMainpage";
 import { NewPost } from "../../components/UI/Buttons/NewPost";
 import home from "../../assets/images/btnImg/home.png";
 import image12 from "../../assets/images/image-12.png";
-import imagen20251021164242516Photoroom1 from "../../assets/images/imagen_2025-10-21_164242516-Photoroom 1.png";
+import registerDog from "../../assets/images/register-Dog.png";
 import styles from "./Inicio.module.css"; 
 
 export const Inicio = () => {
@@ -39,7 +39,7 @@ export const Inicio = () => {
         <img
           className={styles.imagen}
           alt="Imagen"
-          src={imagen20251021164242516Photoroom1}
+          src={registerDog}
         />
 
         <p className={styles.p}>Esta semana has contribuido a: 4 personas</p>

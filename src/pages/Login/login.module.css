@@ -17,7 +17,7 @@
   max-width: 500px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative; /* referencia para posicionar el gato absolutamente */
+  position: relative; /* Para posicionar el gato respecto a este contenedor */
 }
 
 .title {
@@ -31,8 +31,8 @@
 .imageWrapper {
   /* Posicionar el gato respecto a .panel */
   position: absolute;
-  left: 24px; /* alinea con el padding interno del panel */
-  top: 200px; /* ajusta para colocarlo encima del input (modificar si es necesario) */
+  left: 25px; /* alinea con el padding interno del panel */
+  top: 90px; /* ajusta para colocarlo encima del input (modificar si es necesario) */
   z-index: 20;
   pointer-events: none;
   display: block;
@@ -45,7 +45,7 @@
 }
 
 .input {
-  background-color: white;
+  background-color: var(--bordersbackground);
   border: 2px solid var(--bordersdivs);
   border-radius: 20px;
   padding: 16px 20px;
@@ -56,11 +56,6 @@
   display: block;
   box-sizing: border-box;
   transition: border-color 0.2s;
-}
-
-/* Empuja el primer input hacia abajo para dejar sitio al gato */
-.input:first-of-type {
-  margin-top: 48px;
 }
 
 .input:focus {

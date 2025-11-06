@@ -17,6 +17,7 @@
   max-width: 500px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para posicionar el perro respecto a este contenedor */
 }
 
 .title {
@@ -27,8 +28,24 @@
   margin: 0 0 40px 0;
 }
 
+.imageWrapper {
+  /* Posicionar el gato respecto a .panel */
+  position: absolute;
+  left: 50px; /* alinea con el padding interno del panel */
+  top: 80px; /* ajusta para colocarlo encima del input (modificar si es necesario) */
+  z-index: 20;
+  pointer-events: none;
+  display: block;
+}
+
+.dogImage {
+  width: 120px; /* tamaño visible similar al diseño */
+  height: auto;
+  object-fit: contain;
+}
+
 .input {
-  background-color: white;
+  background-color: var(--bordersbackground);
   border: 2px solid var(--bordersdivs);
   border-radius: 20px;
   padding: 16px 20px;

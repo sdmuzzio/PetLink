@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollRestoration, useNavigate } from 'react-router-dom';
 import { BtnPrimary } from "../../components/UI/Buttons/BtnPrimary";
 import styles from './Login.module.css';
-import image13 from '../../assets/images/image-13.png';
+import loginCat from '../../assets/images/login-Cat.png';
 
 function Login() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Login() {
 
         {/* GATO ENCIMA DEL INPUT EMAIL */}
         <div className={styles.imageWrapper}>
-          <img src={image13} alt="Gato" className={styles.catImage} />
+          <img src={loginCat} alt="Gato" className={styles.catImage} />
         </div>
 
         <input type="email" placeholder="Email" className={styles.input} />
