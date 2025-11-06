@@ -1,0 +1,35 @@
+.cardsList {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.3 / 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cardsList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.postText {
+  height: 40%;
+}
+
+.postTitle {
+  height: 15%;
+}
+
+.textPrimary {
+  color: #333;
+  font-weight: 500;
+}
