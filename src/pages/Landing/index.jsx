@@ -53,6 +53,10 @@ export const LandingPage = () => {
             Aquí tu publicación se ve
           </p>
 
+          <p className={classes.subHeading}>
+            Aquí tu publicación se ve
+          </p>
+
           <BtnPrimary
             className={classes.btnPrimary}
             divClassName={classes.btnPrimaryText}

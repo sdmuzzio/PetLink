@@ -1,26 +1,28 @@
 import React from 'react';
 import { ScrollRestoration, useNavigate } from 'react-router-dom';
-import BtnPrimaryLogin from '../../components/BtnPrimaryLogin';
+import { BtnPrimary } from "../../components/UI/Buttons/BtnPrimary";
 import styles from './Login.module.css';
 import image13 from '../../assets/images/image-13.png';
 
 function Login() {
   const navigate = useNavigate();
 
-  return ( 
+  return (
     <div className={styles.container}>
       <div className={styles.panel}>
+
+        <h1 className={styles.title}>Iniciar Sesión</h1>
+
         {/* GATO ENCIMA DEL INPUT EMAIL */}
         <div className={styles.imageWrapper}>
           <img src={image13} alt="Gato" className={styles.catImage} />
         </div>
 
-        <h1 className={styles.title}>Iniciar Sesión</h1>
-
         <input type="email" placeholder="Email" className={styles.input} />
         <input type="password" placeholder="Password" className={styles.input} />
 
-        <BtnPrimaryLogin
+        <BtnPrimary
+          className={styles.loginButton}
           text="Iniciar Sesión"
           onClick={() => navigate('/inicio')}
         />

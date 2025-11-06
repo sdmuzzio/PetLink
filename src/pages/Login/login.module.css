@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   width: 100vw;
-  background: transparent;
+  background: var(--bordersbackground);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,53 +10,69 @@
 }
 
 .panel {
-  position: relative;
   background-color: var(--primary-green-tabs);
   border-radius: 50px;
-  padding: 80px 40px 60px;
+  padding: 60px 40px;
   width: 100%;
   max-width: 500px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative; /* referencia para posicionar el gato absolutamente */
 }
 
 .title {
   color: var(--textprimary);
-  font-family: "Preahvihear-Regular", Helvetica;
+  font-family: "Preahvihear", Helvetica;
   font-size: 48px;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 }
 
 .imageWrapper {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 0 -125px 10px;
-  z-index: 10;
+  /* Posicionar el gato respecto a .panel */
+  position: absolute;
+  left: 24px; /* alinea con el padding interno del panel */
+  top: 200px; /* ajusta para colocarlo encima del input (modificar si es necesario) */
+  z-index: 20;
   pointer-events: none;
+  display: block;
 }
 
 .catImage {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 120px; /* tamaño visible similar al diseño */
+  height: auto;
+  object-fit: contain;
 }
 
 .input {
   background-color: white;
-  border: 1px solid var(--bordersdivs);
-  border-radius: 8px;
-  padding: 16px 16px 16px 70px;
+  border: 2px solid var(--bordersdivs);
+  border-radius: 20px;
+  padding: 16px 20px;
   font-size: 16px;
   color: var(--textsecondary);
   width: 100%;
   margin: 12px 0;
   display: block;
   box-sizing: border-box;
-  position: relative;
-  z-index: 1;
+  transition: border-color 0.2s;
+}
+
+/* Empuja el primer input hacia abajo para dejar sitio al gato */
+.input:first-of-type {
+  margin-top: 48px;
+}
+
+.input:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
+
+.loginButton { /* Estilos para el botón de registro */
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 18px; 
 }
 
 .links { /* Contenedor para los enlaces */
