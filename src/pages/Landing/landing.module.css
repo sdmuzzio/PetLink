@@ -6,8 +6,7 @@
   display: flex;
   flex-direction: column;
 }
-
-/* --- 2. HEADER (CON FLEXBOX) --- */
+/* --- 2. HEADER --- */
 .headerBackground {
   background-color: var(--primary-green);
   border-radius: 0px 0px 24px 24px;
@@ -29,10 +28,10 @@
   font-weight: 400;
 }
 
-/* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
+/* --- 3. CONTENIDO PRINCIPAL --- */
 .mainContent {
   width: 100%;
-  padding: 0 2.19% 40px;
+  padding: 0 0 40px 0;
   box-sizing: border-box;
   flex-grow: 1;
   display: grid;
@@ -47,7 +46,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  /* Alineado a la izquierda */
+  padding-left: 2.19%; /* Alineación con la imagen */
 }
 
 .mainHeading {
@@ -138,7 +137,7 @@
   z-index: 0;
 }
 
-.image10 {
+.landingDog {
   object-fit: cover;
   position: absolute;
   z-index: 1;
@@ -153,23 +152,24 @@
   /* Centrado */
 }
 
-.image11 {
+.landingCat {
   object-fit: cover;
   position: absolute;
   z-index: 2;
 
   /* FLUIDEZ: Tamaño y posición en porcentaje */
-  width: 45%;
+  width: 50%;
   /* El gato será el 45% del contenedor */
   height: auto;
-  top: 75%;
-  left: 25%;
+  top: 69%;
+  /*nice*/
+  left: 40%;
   transform: translate(-50%, -50%);
   /* Centrado */
 }
 
 
-/* --- 4. MEDIA QUERIES (TODO JUNTO AL FINAL) --- */
+/* --- 4. MEDIA QUERIES  --- */
 
 /* Para tablets y móviles (ej. menos de 800px) */
 @media (max-width: 800px) {
@@ -201,18 +201,23 @@
 
   .imageContainer {
     order: 2;
-    /* Las imágenes van después */
-    height: 400px;
   }
 
-  .image10 {
-    height: 350px;
-    left: 50%;
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
   }
 
-  .image11 {
-    height: 240px;
-    left: 15%;
+  .landingDog {
+    left: 55%;
+  }
+
+  .landingCat {
+    left: 35%;
   }
 
   .logo {
@@ -227,26 +232,36 @@
     padding: 0 15px;
   }
 
-  .image11 {
-    display: none;
-    /* Ocultamos el gato */
-  }
-
-  .image10 {
-    height: 300px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Lo centramos */
-  }
-
-  .imageContainer {
-    height: 320px;
-  }
-
   .btnPrimary {
     width: 100%;
     /* Que ocupe todo el ancho */
     max-width: 300px;
     /* Con un límite */
+  }
+
+  .imageContainer {
+    aspect-ratio: 3/4;
+    /* Cuadrado */
+  }
+
+  .landingCat {
+    display: none;
+    /* Ocultamos el gato */
+  }
+
+  .landingDog { 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .backgroundShape {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /*Si cambiaste el ancho, puedes reposicionarlo */
+    left: 0;
+    transform: none;
   }
 }

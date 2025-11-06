@@ -1,8 +1,8 @@
 import React from "react";
 import { BtnPrimary } from "../../components/UI/Buttons/BtnPrimary";
 import { BtnSecondary } from "../../components/UI/Buttons/BtnSecondary";
-import image10 from "../../assets/images/image-10.png";
-import image11 from "../../assets/images/image-11.png";
+import landingDog from "../../assets/images/landing-dog.png";
+import landingCat from "../../assets/images/landing-cat.png";
 import * as classes from "./landing.module.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -67,8 +67,8 @@ export const LandingPage = () => {
         {/* Usará position: relative para contener las imágenes */}
         <div className={classes.imageContainer}>
           <div className={classes.backgroundShape} />
-          <img className={classes.image10} alt="Perro" src={image10} />
-          <img className={classes.image11} alt="Gato" src={image11} />
+          <img className={classes.landingDog} alt="Perro" src={landingDog} />
+          <img className={classes.landingCat} alt="Gato" src={landingCat} />
         </div>
         
       </main>
