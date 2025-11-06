@@ -2,9 +2,9 @@
 .landingPage {
   background-color: var(--bordersbackground);
   width: 100%;
-  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Apila el header y el main content */
+  flex-direction: column;
 }
 
 /* --- 2. HEADER (CON FLEXBOX) --- */
@@ -13,23 +13,80 @@
   border-radius: 0px 0px 30px 30px;
   height: 70px;
   width: 100%;
-  padding: 0 28px; /* Espaciado interno */
-  
-  /* ¡Magia de Flexbox! */
+  padding: 0 28px;
   display: flex;
-  align-items: center; /* Centra verticalmente */
-  justify-content: space-between; /* Empuja el logo a la izquierda y el botón a la derecha */
-  
-  box-sizing: border-box; /* Para que el padding no afecte el ancho */
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-/* Logo y Botón: Ya no necesitan position: absolute */
 .logo {
   color: #ffffff;
   font-family: "Preahvihear-Regular", Helvetica;
   font-size: 32px;
   font-weight: 400;
-  /* ...otros estilos de texto que tenías... */
+}
+
+/* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
+.mainContent {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 2.19%;
+  /* Ajusté tu padding para que sea uniforme */
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 48% 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- COLUMNA 1: TEXTO --- */
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  /* Alineado a la izquierda */
+}
+
+.mainHeading {
+  color: var(--textprimary);
+  font-family: "Preahvihear-Regular", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.subHeading {
+  color: var(--textsecondary);
+  font-family: "Lato-SemiBold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.btnPrimary {
+  /* Ancho base para desktop */
+  height: 60px;
+  width: 320px;
+}
+
+.btnPrimaryText {
+  color: #ffffff;
+  font-family: "Preahvihear-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  width: fit-content;
+  /* margin-top: -1.00px; (probablemente no lo necesites) */
+}
+
+.btnPrimary:active .btnPrimaryText {
+  color: #212121;
 }
 
 .btnSecondary {
@@ -38,108 +95,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  z-index: 5;
 }
 
 .btnSecondaryText {
-  /* ...tus estilos para btnSecondaryText... */
-  font-size: 18px;
-}
-
-@media (max-width: 800px) {
-
-  /* ... tus otras reglas de .mainContent, .contentContainer ... */
-
-  .btnPrimary {
-    /* Hacemos el botón un poco más grande
-       para que sea más fácil de tocar en móvil */
-    width: 250px; 
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* ... tus otras reglas ... */
-
-  .btnPrimary {
-    width: 100%; /* Que ocupe todo el ancho de su columna */
-    max-width: 300px; /* Pero con un límite para que no sea gigante */
-  }
-}
-
-/* --- 3. CONTENIDO PRINCIPAL (CON CSS GRID) --- */
-.mainContent {
-  width: 100%;
-  max-width: 1280px; /* Mantiene un ancho máximo en pantallas grandes */
-  margin: 0 auto; /* Centra el contenido */
-  padding: 0px 0% 40px 2.19%; /* Espaciado lateral */
-  box-sizing: border-box;
-  /*flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
-
-  /* ¡Magia de Grid! */
-  display: grid;
-  grid-template-columns: 48% 1fr; /* Columna 1 (texto) 48%, Columna 2 (img) el resto */
-  align-items: center;
-  gap: 20px; /* Espacio entre las columnas */
-}
-
-/* --- COLUMNA 1: TEXTO --- */
-.contentContainer {
-  /* Ya no necesita position: absolute, left, top, etc. */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start; /* Alinea el texto y botón a la izquierda */
-}
-
-.mainHeading {
-  color: var(--textprimary);
   font-family: "Preahvihear-Regular", Helvetica;
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 400;
-  text-align: left; /* O 'center' si prefieres */
+  color: var(--primary-green);
+  transition: color 0.2s ease-out;
 }
 
-.subHeading {
-  color: var(--textsecondary);
-  font-family: "Lato-SemiBold", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left; /* O 'center' */
+.btnSecondary:hover .btnSecondaryText {
+  color: white;
 }
-
-.btnPrimary {
-  height: 60px;
-  width: 200px;
+.btnSecondary:active .btnSecondaryText {
+  color: var(--textprimary);
 }
 
 /* --- COLUMNA 2: IMÁGENES --- */
 .imageContainer {
-  /* IMPORTANTE: Este es el nuevo contexto para las imágenes */
   position: relative;
   width: 100%;
-  height: 530px; /* Alto de la forma verde */
+  height: 530px;
 }
 
-/* Las imágenes y la forma ahora son absolutas RELATIVO a .imageContainer */
 .backgroundShape {
   background-color: #74b476;
   border-radius: 0px 0px 0px 73px;
-  height: 100%; /* 530px */
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
-  right: 0; /* Lo anclamos a la derecha */
+  right: 0;
   z-index: 0;
 }
 
 .image10 {
   height: 470px;
-  width: auto; /* Dejamos que el alto defina el ancho */
+  width: auto;
   object-fit: cover;
   position: absolute;
   top: 50%;
-  left: 25%; /* Ajusta esto para tu gusto */
-  transform: translateY(-50%); /* Centrado vertical */
+  left: 25%;
+  /* Este valor está bien si te gusta cómo se ve */
+  transform: translateY(-50%);
   z-index: 1;
 }
 
@@ -149,71 +150,92 @@
   object-fit: cover;
   position: absolute;
   top: 70%;
-  left: 7%; /* Ajusta esto para tu gusto */
+  left: 7%;
+  /* Este valor está bien si te gusta cómo se ve */
   transform: translateY(-50%);
   z-index: 2;
 }
 
 
-/* --- 4. MEDIA QUERIES (LA MAGIA RESPONSIVE) --- */
+
+/* --- 4. MEDIA QUERIES (TODO JUNTO AL FINAL) --- */
 
 /* Para tablets y móviles (ej. menos de 800px) */
 @media (max-width: 800px) {
-  
-  /* 1. Apila las columnas del grid */
+
   .mainContent {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
+    /* Una sola columna */
     text-align: center;
-    gap: 40px; /* Espacio vertical entre texto e imágenes */
+    gap: 40px;
   }
 
-  /* 2. Centra el texto */
   .contentContainer {
-    align-items: center; /* Centra el contenido de la columna de texto */
-    order: 1; /* El texto va primero */
-  }
-  .mainHeading, .subHeading {
-    text-align: center;
+    align-items: center;
+    /* Centra el contenido */
+    order: 1;
+    /* El texto va primero */
   }
 
-  /* 3. Ajusta las imágenes */
+  .mainHeading,
+  .subHeading {
+    text-align: center;
+    /* Centra los textos */
+  }
+
+  .btnPrimary {
+    width: 250px;
+    /* Ancho para tablet */
+  }
+
   .imageContainer {
-    order: 2; /* Las imágenes van después */
-    height: 400px; /* Un poco más bajo para móvil */
+    order: 2;
+    /* Las imágenes van después */
+    height: 400px;
   }
 
   .image10 {
     height: 350px;
     left: 50%;
   }
+
   .image11 {
     height: 240px;
     left: 15%;
   }
 
-  /* 4. Ajusta el Header */
   .logo {
-    font-size: 28px; /* Logo más pequeño */
+    font-size: 28px;
   }
 }
 
 /* Para móviles muy pequeños */
 @media (max-width: 480px) {
+
   .headerBackground {
-    padding: 0 15px; /* Menos padding */
+    padding: 0 15px;
   }
-  
+
   .image11 {
-    display: none; /* Ocultamos el gato si no hay espacio */
+    display: none;
+    /* Ocultamos el gato */
   }
 
   .image10 {
     height: 300px;
     left: 50%;
-    transform: translate(-50%, -50%); /* Lo centramos completamente */
+    transform: translate(-50%, -50%);
+    /* Lo centramos */
   }
-  
+
   .imageContainer {
     height: 320px;
+  }
+
+  .btnPrimary {
+    width: 100%;
+    /* Que ocupe todo el ancho */
+    max-width: 300px;
+    /* Con un límite */
   }
 }

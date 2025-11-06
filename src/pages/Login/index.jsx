@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollRestoration, useNavigate } from 'react-router-dom';
-import BtnPrimaryLogin from '../../components/UI/Buttons/BtnPrimary';
+import BtnPrimaryLogin from '../../components/BtnPrimaryLogin';
 import styles from './Login.module.css';
 import image13 from '../../assets/images/image-13.png';
 
